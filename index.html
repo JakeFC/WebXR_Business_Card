@@ -69,31 +69,31 @@ async function activateXR() {
     reticle = gltf.scene;
     reticle.visible = false;
     scene.add(reticle);
-  })
+  });
   
   let centerPoint; //= new THREE.Mesh();
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  centerPoint = gltf.scene;
 	  centerPoint.scale.x = centerPoint.scale.y = centerPoint.scale.z = 0.12;
-  })
+  });
 
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
 	  email = gltf.scene;
 	  email.scale.x = email.scale.y = email.scale.z = 0.12;
-  })
+  });
 
   let github;
   loader.load("assets/buttons/Github/GitHub.gltf", function(gltf) {
 	  github = gltf.scene;
 	  github.scale.x = github.scale.y = github.scale.z = 0.12;
-  })
+  });
 
   let linkedIn;
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  linkedIn = gltf.scene;
 	  linkedIn.scale.x = linkedIn.scale.y = linkedIn.scale.z = 0.12;
-  })
+  });
 
   session.addEventListener("select", (event) => {
     if (reticle && reticle.visible) {
