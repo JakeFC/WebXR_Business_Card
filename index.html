@@ -72,7 +72,7 @@ async function activateXR() {
   })
   
   let placeHolder;
-  placeHolder = <div></div>;
+  placeHolder = Object.create(null);
 
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
@@ -95,11 +95,14 @@ async function activateXR() {
       centerPoint.position.copy(reticle.position);
       scene.add(centerPoint);
 	  reticle.visible = false;
+
 	  centerPoint.add(email);
 	  email.position.y += 30;
+
 	  centerPoint.add(github);
 	  github.position.x += 15;
 	  github.position.y -= 15;
+
 	  centerPoint.add(linkedIn);
 	  linkedIn.position.x -= 15;
 	  linkedIn.position.y -= 15;
