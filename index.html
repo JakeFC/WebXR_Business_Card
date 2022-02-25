@@ -79,12 +79,12 @@ async function activateXR() {
   })
 
   let github;
-  loader.load("assets/buttons/Github/GitHub.glb", function(gltf) {
+  loader.load("assets/buttons/Github/GitHub.gltf", function(gltf) {
 	  github = gltf.scene;
   })
 
   let linkedIn;
-  loader.load("assets/buttons/LinkedIn/LinkedIn.gltf", function(gltf) {
+  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  linkedIn = gltf.scene;
   })
 
@@ -94,7 +94,7 @@ async function activateXR() {
       scene.add(centerPoint);
 
 	  github.position.copy(reticle.position);
-	  scene.add(github);
+	  scene.add(linkedIn);
 
 	  //scene.remove(reticle);
 
