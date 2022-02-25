@@ -71,7 +71,11 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  let centerPoint = new THREE.Mesh();
+  let centerPoint; //= new THREE.Mesh();
+  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
+	  linkedIn = gltf.scene;
+	  linkedIn.scale.x = linkedIn.scale.y = linkedIn.scale.z = 0.12;
+  })
 
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
