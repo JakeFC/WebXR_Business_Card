@@ -75,50 +75,58 @@ async function activateXR() {
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  centerPoint = gltf.scene;
 	  centerPoint.scale.x = centerPoint.scale.y = centerPoint.scale.z = 0.12;
+	  centerPoint.visible = false;
+	  scene.add(centerPoint);
   });
 
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
 	  email = gltf.scene;
 	  email.scale.x = email.scale.y = email.scale.z = 0.12;
+	  email.visible = false;
+	  scene.add(email);
   });
 
   let github;
   loader.load("assets/buttons/Github/GitHub.gltf", function(gltf) {
 	  github = gltf.scene;
 	  github.scale.x = github.scale.y = github.scale.z = 0.12;
+	  github.visible = false;
+	  scene.add(github);
   });
 
   let linkedIn;
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  linkedIn = gltf.scene;
 	  linkedIn.scale.x = linkedIn.scale.y = linkedIn.scale.z = 0.12;
+	  linkedIn.visible = false;
+	  scene.add(linkedIn);
   });
 
   session.addEventListener("select", (event) => {
     if (reticle && reticle.visible) {
       centerPoint.position.copy(reticle.position);
-      scene.add(centerPoint);
+      centerPoint.visible = true;
 
 	  //linkedIn.position.copy(reticle.position);
 	  //scene.add(linkedIn);
 
 	  //scene.remove(reticle);
 
-	  //linkedIn.position = centerPoint.position;
-	  //scene.add(linkedIn);
-	  //linkedIn.parent = centerPoint;
-	  //linkedIn.position.x -= 0.5;
-	  //linkedIn.position.y -= 0.5;
+	  linkedIn.position = centerPoint.position;
+	  linkedIn.visible = true;
+	  linkedIn.parent = centerPoint;
+	  linkedIn.position.x -= 0.5;
+	  linkedIn.position.y -= 0.5;
 
-	  centerPoint.add(email);
-	  email.position.copy(centerPoint.position);
-	  email.position.y += 1;
+	  //centerPoint.add(email);
+	  //email.position.copy(centerPoint.position);
+	  //email.position.y += 1;
 
-	  centerPoint.add(github);
-	  github.position.copy(centerPoint.position);
-	  github.position.x += 0.5;
-	  github.position.y -= 0.5;
+	  //centerPoint.add(github);
+	  //github.position.copy(centerPoint.position);
+	  //github.position.x += 0.5;
+	  //github.position.y -= 0.5;
     }
   });
 
