@@ -16,10 +16,11 @@
 <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
 <button onclick="activateXR()">Start Hello WebXR</button>
-<script>
-async function activateXR() {
-  import * as THREE from 'three';
+<script type="module">
 
+import * as THREE from 'three';
+
+async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
   document.body.appendChild(canvas);
