@@ -77,8 +77,9 @@ async function activateXR() {
     //mtl.preload();
 	//mtl.material.side = THREE.DoubleSide;
     //objLoader.setMaterials(mtl);
-  objLoader.load('assets/buttons/LinkedIn/LinkedIn.obj', (duck) => {
+  objLoader.load('assets/buttons/LinkedIn/LinkedIn.obj', (root) => {
 	  //const duck = new THREE.mesh(root, mtl)
+	  const duck = root.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
   //});
