@@ -10,6 +10,10 @@
   <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
 
   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script src="https://threejs.org/docs/#examples/en/loaders/OBJLoader.js"></script>
+
+  <script src="https://threejs.org/docs/#examples/en/loaders/MTLLoader.js"></script>
 </head>
 <body>
 
@@ -71,9 +75,6 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  import {OBJLoader} from 'https://threejs.org/docs/#examples/en/loaders/OBJLoader.js';
-  import {MTLLoader} from 'https://threejs.org/docs/#examples/en/loaders/MTLLoader.js';
-
   const objLoader = new OBJLoader();
   const mtlLoader = new MTLLoader();
   mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
