@@ -92,18 +92,19 @@ async function activateXR() {
     if (reticle && reticle.visible) {
       centerPoint.position.copy(reticle.position);
       scene.add(centerPoint);
-	  scene.remove(reticle);
+
+	  //scene.remove(reticle);
 
 	  centerPoint.add(email);
-	  email.position.y += 30;
+	  email.position.y += 1;
 
 	  centerPoint.add(github);
-	  github.position.x += 15;
-	  github.position.y -= 15;
+	  github.position.x += 0.5;
+	  github.position.y -= 0.5;
 
 	  centerPoint.add(linkedIn);
-	  linkedIn.position.x -= 15;
-	  linkedIn.position.y -= 15;
+	  linkedIn.position.x -= 0.5;
+	  linkedIn.position.y -= 0.5;
     }
   });
 
