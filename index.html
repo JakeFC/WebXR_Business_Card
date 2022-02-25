@@ -93,10 +93,14 @@ async function activateXR() {
       centerPoint.position.copy(reticle.position);
       scene.add(centerPoint);
 
-	  linkedIn.position.copy(reticle.position);
-	  scene.add(linkedIn);
+	  //linkedIn.position.copy(reticle.position);
+	  //scene.add(linkedIn);
 
 	  //scene.remove(reticle);
+
+	  centerPoint.add(linkedIn);
+	  linkedIn.position.x -= 0.5;
+	  linkedIn.position.y -= 0.5;
 
 	  centerPoint.add(email);
 	  email.position.y += 1;
@@ -104,10 +108,6 @@ async function activateXR() {
 	  centerPoint.add(github);
 	  github.position.x += 0.5;
 	  github.position.y -= 0.5;
-
-	  centerPoint.add(linkedIn);
-	  linkedIn.position.x -= 0.5;
-	  linkedIn.position.y -= 0.5;
     }
   });
 
