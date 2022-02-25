@@ -71,8 +71,8 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  let placeHolder;
-  placeHolder = Object.create(null);
+  let centerPoint;
+  const centerPoint = Object.create(null);
 
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
@@ -91,7 +91,6 @@ async function activateXR() {
 
   session.addEventListener("select", (event) => {
     if (reticle && reticle.visible) {
-      const centerPoint = placeHolder.centerPoint();
       centerPoint.position.copy(reticle.position);
       scene.add(centerPoint);
 	  scene.remove(reticle);
