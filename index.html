@@ -72,7 +72,7 @@ async function activateXR() {
   })
   
   let centerPoint;
-  const centerPoint = THREE.Object3D();
+  const centerPoint = new THREE.Mesh();
 
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
