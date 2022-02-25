@@ -76,16 +76,19 @@ async function activateXR() {
   let email;
   loader.load("assets/buttons/Email/Email.gltf", function(gltf) {
 	  email = gltf.scene;
+	  email.scale.x = email.scale.y = email.scale.z = 0.12;
   })
 
   let github;
   loader.load("assets/buttons/Github/GitHub.gltf", function(gltf) {
 	  github = gltf.scene;
+	  github.scale.x = github.scale.y = github.scale.z = 0.12;
   })
 
   let linkedIn;
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  linkedIn = gltf.scene;
+	  linkedIn.scale.x = linkedIn.scale.y = linkedIn.scale.z = 0.12;
   })
 
   session.addEventListener("select", (event) => {
@@ -99,13 +102,16 @@ async function activateXR() {
 	  //scene.remove(reticle);
 
 	  centerPoint.add(linkedIn);
+	  linkedIn.position.copy(centerPoint.position);
 	  linkedIn.position.x -= 0.5;
 	  linkedIn.position.y -= 0.5;
 
 	  centerPoint.add(email);
+	  email.position.copy(centerPoint.position);
 	  email.position.y += 1;
 
 	  centerPoint.add(github);
+	  github.position.copy(centerPoint.position);
 	  github.position.x += 0.5;
 	  github.position.y -= 0.5;
     }
