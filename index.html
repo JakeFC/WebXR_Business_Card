@@ -106,7 +106,8 @@ async function activateXR() {
 	  //scene.remove(reticle);
 
 	  linkedIn.position.copy(centerPoint.position);
-	  centerPoint.add(linkedIn);
+	  scene.add(linkedIn);
+	  linkedIn.parent = centerPoint;
 	  linkedIn.position.x -= 0.5;
 	  linkedIn.position.y -= 0.5;
 
