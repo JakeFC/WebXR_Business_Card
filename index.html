@@ -11,6 +11,7 @@
 
   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/OBJLoader.js"></script>
+  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/MTLLoader.js"></script>
 </head>
 <body>
 
@@ -73,17 +74,16 @@ async function activateXR() {
   })
   
   const objLoader = new THREE.OBJLoader();
-  //const mtlLoader = new THREE.MaterialLoader();
-  //mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
-    //mtl.preload();
+  const mtlLoader = new THREE.MTLLoader();
+  mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
+    mtl.preload();
 	//mtl.material.side = THREE.DoubleSide;
-    //objLoader.setMaterials(mtl);
-  objLoader.load("assets/buttons/LinkedIn/LinkedIn.obj", function(obj) {
+    objLoader.setMaterials(mtl);
+  objLoader.load("assets/buttons/LinkedIn/LinkedIn.obj", (duck) => {
 	  //const duck = new THREE.mesh(obj, mtl)
-	  const duck = obj.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
-  //});
+  });
 
   //let duck;
   //loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
