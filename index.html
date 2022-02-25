@@ -105,6 +105,7 @@ async function activateXR() {
     if (reticle && reticle.visible) {
 	  const centerClone = centerPoint.clone();
       centerClone.position.copy(reticle.position);
+	  scene.add(centerClone);
 
 	  //linkedIn.position.copy(reticle.position);
 	  //scene.add(linkedIn);
