@@ -74,10 +74,11 @@ async function activateXR() {
   const objLoader = new THREE.objLoader();
   const mtlLoader = new THREE.mtlLoader();
   mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
-    mtl.preload();
-	mtl.materials.Material.side = THREE.DoubleSide;
-    objLoader.setMaterials(mtl);
-  objLoader.load('assets/buttons/LinkedIn/LinkedIn.obj', (duck) => {
+    //mtl.preload();
+	//mtl.material.side = THREE.DoubleSide;
+    //objLoader.setMaterials(mtl);
+  objLoader.load('assets/buttons/LinkedIn/LinkedIn.obj', (root) => {
+	  const duck = new THREE.mesh(root, mtl)
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
   });
