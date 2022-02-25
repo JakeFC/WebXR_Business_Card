@@ -90,11 +90,11 @@ async function activateXR() {
   })
 
   session.addEventListener("select", (event) => {
-    if (!centerPoint) {
+    if (reticle && reticle.visible) {
       const centerPoint = placeHolder.centerPoint();
       centerPoint.position.copy(reticle.position);
       scene.add(centerPoint);
-	  reticle.visible = false;
+	  scene.remove(reticle);
 
 	  centerPoint.add(email);
 	  email.position.y += 30;
@@ -133,7 +133,7 @@ async function activateXR() {
       camera.updateMatrixWorld(true);
   
       const hitTestResults = frame.getHitTestResults(hitTestSource);
-      if (hitTestResults.length > 0 && reticle && !centerPoint) {
+      if (hitTestResults.length > 0 && reticle) {
         const hitPose = hitTestResults[0].getPose(referenceSpace);
         reticle.visible = true;
         reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
