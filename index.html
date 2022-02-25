@@ -16,10 +16,7 @@
 <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
 <button onclick="activateXR()">Start Hello WebXR</button>
-<script type="module">
-
-import * as THREE from 'three';
-
+<script>
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
@@ -74,8 +71,8 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  const objLoader = new THREE.OBJLoader();
-  const mtlLoader = new THREE.MTLLoader();
+  const objLoader = new THREE.objLoader();
+  const mtlLoader = new THREE.mtlLoader();
   mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
     mtl.preload();
 	mtl.materials.Material.side = THREE.DoubleSide;
