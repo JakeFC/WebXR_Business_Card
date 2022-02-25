@@ -75,8 +75,6 @@ async function activateXR() {
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  centerPoint = gltf.scene;
 	  centerPoint.scale.x = centerPoint.scale.y = centerPoint.scale.z = 0.12;
-	  centerPoint.visible = false;
-	  scene.add(centerPoint);
   });
 
   let email;
@@ -105,17 +103,17 @@ async function activateXR() {
 
   session.addEventListener("select", (event) => {
     if (reticle && reticle.visible) {
-      centerPoint.position.copy(reticle.position);
-      centerPoint.visible = true;
+	  const centerClone = centerPoint.clone();
+      centerClone.position.copy(reticle.position);
 
 	  //linkedIn.position.copy(reticle.position);
 	  //scene.add(linkedIn);
 
 	  //scene.remove(reticle);
 
-	  linkedIn.position = centerPoint.position;
+	  linkedIn.position = centerClone.position;
 	  linkedIn.visible = true;
-	  linkedIn.parent = centerPoint;
+	  linkedIn.parent = centerClone;
 	  linkedIn.position.x -= 0.5;
 	  linkedIn.position.y -= 0.5;
 
