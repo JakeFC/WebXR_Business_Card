@@ -84,7 +84,7 @@ async function activateXR() {
   //});
 
   let linkedIn;
-  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
+  loader.load("assets/buttons/LinkedIn/LinkedIn.gltf", function(gltf) {
     linkedIn = gltf.scene;
   });
 
@@ -97,6 +97,9 @@ async function activateXR() {
 
 	  duck.add(clone);
 	  clone.position.y += 5;
+
+	  duck.add(linkedIn);
+	  linkedIn.position.x += 5;
 
 	  scene.remove(reticle);
 
