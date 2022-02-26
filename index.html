@@ -73,14 +73,13 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  const objLoader = new THREE.OBJLoader();
   const mtlLoader = new THREE.MTLLoader();
   mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
     mtl.preload();
 	//mtl.material.side = THREE.DoubleSide;
-    objLoader.setMaterials(mtl);
-  objLoader.load("assets/buttons/LinkedIn/LinkedIn.obj", (duck) => {
-	  //const duck = new THREE.mesh(obj, mtl)
+    loader.setMaterials(mtl);
+  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", (gltf) => {
+	  const duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
   });
