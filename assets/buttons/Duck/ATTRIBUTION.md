@@ -1,0 +1,2 @@
+This work is based on "Duck With Sunglasses" (https://sketchfab.com/3d-models/duck-with-sunglasses-55184083674149eb86f3d18ae4dc0b35)
+by Poyo20 (https://sketchfab.com/poyo20) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
