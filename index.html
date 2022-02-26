@@ -73,16 +73,15 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  const mtlLoader = new THREE.MTLLoader();
-  mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
-    mtl.preload();
-	//mtl.material.side = THREE.DoubleSide;
-    loader.setMaterials(mtl);
+  //const mtlLoader = new THREE.MTLLoader();
+  //mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
+    //mtl.preload();
+    //loader.setMaterials(mtl);
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", (gltf) => {
 	  const duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
-  });
+  //});
 
   //let duck;
   //loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
