@@ -80,7 +80,7 @@ async function activateXR() {
   let duck;
   loader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene;
-	  duck.scale.x = duck.scale.y = duck.scale.z = 0.06;
+	  duck.scale.x = duck.scale.y = duck.scale.z = 0.12;
   });
   //});
 
@@ -97,6 +97,7 @@ async function activateXR() {
 	  scene.add(duck);
 
 	  duck.add(clone);
+	  clone.scale *= 8.33;
 	  clone.position.y += 5;
 
 	  duck.add(linkedIn);
