@@ -80,6 +80,7 @@ async function activateXR() {
   let duck;
   loader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene;
+	  duck.scale.x = duck.scale.y = duck.scale.z = 0.12;
   });
   //});
 
@@ -102,8 +103,6 @@ async function activateXR() {
 	  linkedIn.position.x += 5;
 
 	  scene.remove(reticle);
-
-	  duck.scale.x = duck.scale.y = duck.scale.z = 0.12;
     }
   });
 
