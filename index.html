@@ -77,8 +77,9 @@ async function activateXR() {
   //mtlLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
     //mtl.preload();
     //loader.setMaterials(mtl);
-  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", (gltf) => {
-	  const duck = gltf.scene;
+  let duck;
+  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
+	  duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
   //});
