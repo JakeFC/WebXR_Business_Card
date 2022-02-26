@@ -80,7 +80,9 @@ async function activateXR() {
   let duck;
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
 	  duck = gltf.scene;
+	  duck.visible = false;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
+	  scene.add(duck);
   });
   //});
 
@@ -93,9 +95,8 @@ async function activateXR() {
 
   session.addEventListener("select", (event) => {
     if (duck) {
-      const clone = duck.clone();
-      clone.position.copy(reticle.position);
-      scene.add(clone);
+      duck.position.copy(reticle.position);
+      duck.visible = true;
     }
   });
 
