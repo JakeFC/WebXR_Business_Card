@@ -80,14 +80,12 @@ async function activateXR() {
   let duck;
   loader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene;
-	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
   //});
 
   let linkedIn;
   loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
     linkedIn = gltf.scene;
-	linkedIn.scale.x = linkedIn.scale.y = linkedIn.scale.z = 0.25;
   });
 
   session.addEventListener("select", (event) => {
@@ -101,6 +99,8 @@ async function activateXR() {
 	  clone.position.y += 5;
 
 	  scene.remove(reticle);
+
+	  duck.scale.x = duck.scale.y = duck.scale.z = 0.12;
     }
   });
 
