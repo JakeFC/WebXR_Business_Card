@@ -84,17 +84,19 @@ async function activateXR() {
   });
   //});
 
-  //let duck;
-  //loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
-    //duck = gltf.scene;
-	// Shrinking the duck by halving all dimensions.
-	//duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
-  //});
+  let linkedIn;
+  loader.load("assets/buttons/LinkedIn/LinkedIn2.glb", function(gltf) {
+    linkedIn = gltf.scene;
+	linkedIn.scale.x = linkedIn.scale.y = linkedIn.scale.z = 0.25;
+  });
 
   session.addEventListener("select", (event) => {
     if (duck) {
 	  duck.position.copy(reticle.position);
 	  scene.add(duck);
+
+	  duck.add(linkedIn);
+	  linkedIn.position.y += 1;
     }
   });
 
