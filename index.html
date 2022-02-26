@@ -98,6 +98,7 @@ async function activateXR() {
 	  linkedIn.position.copy(reticle.position);
 	  duck.add(linkedIn);
 	  linkedIn.position.y += 1;
+	  linkedIn.updateMatrix();
 
 	  scene.remove(reticle);
     }
