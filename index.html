@@ -89,8 +89,10 @@ async function activateXR() {
     linkedIn = gltf.scene;
   });
 
+  let placed = false;
+
   session.addEventListener("select", (event) => {
-    if (duck && reticle) {
+    if (duck && reticle && !placed) {
 	  let clone = duck.clone();
 
 	  duck.position.copy(reticle.position);
@@ -106,7 +108,8 @@ async function activateXR() {
 	  linkedIn.position.x += 2;
 
 	  scene.remove(reticle);
-    reticle = null;
+    reticle.visible = false;
+    placed = true;
     }
   });
 
@@ -134,7 +137,7 @@ async function activateXR() {
       camera.updateMatrixWorld(true);
   
       const hitTestResults = frame.getHitTestResults(hitTestSource);
-      if (hitTestResults.length > 0 && reticle != null) {
+      if (hitTestResults.length > 0 && reticle && !placed) {
         const hitPose = hitTestResults[0].getPose(referenceSpace);
         reticle.visible = true;
         reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
