@@ -94,6 +94,7 @@ async function activateXR() {
   session.addEventListener("select", (event) => {
     if (duck) {
 	  scene.add(duck);
+	  duck.parent = null;
       duck.position.copy(reticle.position);
     }
   });
