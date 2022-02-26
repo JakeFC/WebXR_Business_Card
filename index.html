@@ -91,13 +91,15 @@ async function activateXR() {
   });
 
   session.addEventListener("select", (event) => {
-    if (duck) {
+    if (duck && reticle) {
 	  duck.position.copy(reticle.position);
 	  scene.add(duck);
 
 	  linkedIn.position.copy(reticle.position);
 	  duck.add(linkedIn);
 	  linkedIn.position.y += 1;
+
+	  scene.remove(reticle);
     }
   });
 
