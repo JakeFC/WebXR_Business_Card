@@ -95,10 +95,10 @@ async function activateXR() {
 	  duck.position.copy(reticle.position);
 	  scene.add(duck);
 
-	  linkedIn.position.copy(reticle.position);
-	  duck.add(linkedIn);
-	  linkedIn.position.y += 1;
-	  linkedIn.updateMatrix();
+	  let clone = duck.clone();
+	  clone.position.copy(reticle.position);
+	  duck.add(clone);
+	  clone.position.y += 1;
 
 	  scene.remove(reticle);
     }
