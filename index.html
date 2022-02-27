@@ -10,8 +10,6 @@
   <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
 
   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/OBJLoader.js"></script>
-  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/MTLLoader.js"></script>
 </head>
 <body>
 
@@ -76,16 +74,11 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  //const mtlgltfLoader = new THREE.MTLgltfLoader();
-  //mtlgltfLoader.load('assets/buttons/LinkedIn/LinkedIn.mtl', (mtl) => {
-    //mtl.preload();
-    //gltfLoader.setMaterials(mtl);
   let duck;
   gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
-  //});
 
   pngLoader.load("assets/buttons/LinkedIn/LinkedIn.png");
   spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
