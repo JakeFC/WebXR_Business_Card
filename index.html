@@ -80,7 +80,7 @@ async function activateXR() {
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
   });
 
-  pngLoader.load("assets/buttons/LinkedIn.png");
+  pngLoader.load("https://raw.githubusercontent.com/JakeFC/WebXR-Business_Card/main/assets/buttons/LinkedIn.png");
   spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
