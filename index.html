@@ -94,8 +94,8 @@ async function activateXR() {
 
 
   session.addEventListener("select", (event) => {
-    if (duck && reticle && !placed) {
-	  let clone = duck.clone();
+    if (duck && reticle) {
+	  //let clone = duck.clone();
 
 	  duck.position.copy(reticle.position);
 	  scene.add(duck);
