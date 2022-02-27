@@ -66,8 +66,8 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   const gltfLoader = new THREE.GLTFLoader();
-  //const pngLoader = new THREE.TextureLoader();
-  //let spriteMaterial;
+  const pngLoader = new THREE.TextureLoader();
+  let spriteMaterial;
 
   let reticle;
   gltfLoader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
