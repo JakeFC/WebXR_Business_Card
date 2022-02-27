@@ -65,7 +65,7 @@ async function activateXR() {
   // Perform hit testing using the viewer as origin.
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
-  const gltfLoader = new THREE.GLTFgltfLoader();
+  const gltfLoader = new THREE.GLTFLoader();
   //const pngLoader = new THREE.TextureLoader();
   //let spriteMaterial;
 
