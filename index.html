@@ -87,10 +87,10 @@ async function activateXR() {
   });
   //});
 
-  //pngLoader.load("assets/buttons/LinkedIn/LinkedIn.png");
-  //spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
-  //const linkedInSprite = new THREE.Sprite(spriteMaterial);
-  //linkedInSprite.scale.set(0.25, 0.25, 0.25);
+  pngLoader.load("assets/buttons/LinkedIn/LinkedIn.png");
+  spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
+  const linkedInSprite = new THREE.Sprite(spriteMaterial);
+  linkedInSprite.scale.set(0.25, 0.25, 0.25);
 
 
   session.addEventListener("select", (event) => {
@@ -100,8 +100,8 @@ async function activateXR() {
       duck.position.copy(reticle.position);
       scene.add(duck);
 
-      //duck.add(linkedInSprite);
-      //linkedInSprite.position.y += 2;
+      duck.add(linkedInSprite);
+      linkedInSprite.position.y += 2;
 
       //scene.remove(reticle);
       //reticle.visible = false;
