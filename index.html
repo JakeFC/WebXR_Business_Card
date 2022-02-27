@@ -95,16 +95,16 @@ async function activateXR() {
 
   session.addEventListener("select", (event) => {
     if (duck && reticle && reticle.visible) {
-	  const clone = duck.clone();
+      //const clone = duck.clone();
 
-	  clone.position.copy(reticle.position);
-	  scene.add(clone);
+      duck.position.copy(reticle.position);
+      scene.add(duck);
 
-	  //duck.add(linkedInSprite);
-	  //linkedInSprite.position.y += 2;
+      //duck.add(linkedInSprite);
+      //linkedInSprite.position.y += 2;
 
-	  //scene.remove(reticle);
-    //reticle.visible = false;
+      //scene.remove(reticle);
+      //reticle.visible = false;
     }
   });
 
