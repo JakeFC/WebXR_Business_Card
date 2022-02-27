@@ -90,11 +90,11 @@ async function activateXR() {
     if (duck && reticle && reticle.visible) {
       //const clone = duck.clone();
 
-      duck.position.copy(reticle.position);
-      scene.add(duck);
+      linkedInSprite.position.copy(reticle.position);
+      scene.add(linkedInSprite);
 
-      duck.add(linkedInSprite);
-      linkedInSprite.position.y += 2;
+      //duck.add(linkedInSprite);
+      //linkedInSprite.position.y += 2;
 
       //scene.remove(reticle);
       //reticle.visible = false;
