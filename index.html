@@ -78,16 +78,16 @@ async function activateXR() {
   gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
-    duck.psition.set(0, 0, -3);
     scene.add(duck);
+    duck.position.z += 2.5;
   });
 
   pngLoader.load("assets/buttons/LinkedIn.png");
   spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
-  linkedInSprite.position.set(0, 0, 1);
   scene.add(linkedInSprite);
+  linkedInSprite.position.z += 1;
 
 
   session.addEventListener("select", (event) => {
