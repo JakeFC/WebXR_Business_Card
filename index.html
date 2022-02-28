@@ -64,8 +64,8 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   const gltfLoader = new THREE.GLTFLoader();
-  const pngLoader = new THREE.TextureLoader();
-  let spriteMaterial;
+  //const pngLoader = new THREE.TextureLoader();
+  //let spriteMaterial;
 
   let reticle;
   gltfLoader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
@@ -82,8 +82,8 @@ async function activateXR() {
     scene.add(duck);
   });
 
-  pngLoader.load("assets/buttons/LinkedIn.png");
-  spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
+  const pngLoader = new THREE.TextureLoader.load("assets/buttons/LinkedIn.png");
+  const spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   //linkedInSprite.scale.set(0.25, 0.25, 0.25);
   linkedInSprite.position.set(0, -.2, -3);
