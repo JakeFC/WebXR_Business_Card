@@ -153,7 +153,7 @@ async function activateXR() {
     raycaster.setFromCamera(mouse, camera);
 
     //const intersections = raycaster.intersectObjects(buttons, true);
-    const intersections = raycaster.intersectObject(scene.children);
+    const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
       window.open("https://www.linkedin.com/in/jacobfchavera/");
