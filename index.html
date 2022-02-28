@@ -64,7 +64,7 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   const gltfLoader = new THREE.GLTFLoader();
-  //const pngLoader = new THREE.TextureLoader();
+  const pngLoader = new THREE.TextureLoader();
   //let spriteMaterial;
 
   let reticle;
@@ -74,15 +74,15 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  let duck;
-  gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
-	  duck = gltf.scene
-	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
-    duck.position.set(0, -.2, -5);
-    scene.add(duck);
-  });
+  //let duck;
+  //gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
+	  //duck = gltf.scene
+	  //duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
+    //duck.position.set(0, -.2, -5);
+    //scene.add(duck);
+  //});
 
-  const pngLoader = new THREE.TextureLoader().load("assets/buttons/LinkedIn.png");
+  pngLoader.load("assets/buttons/LinkedIn.png");
   const spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   //linkedInSprite.scale.set(0.25, 0.25, 0.25);
