@@ -79,7 +79,8 @@ async function activateXR() {
 	  duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
     scene.add(duck);
-    //duck.position.z += 2.5;
+    duck.position.y -= 0.2;
+    duck.position.z += 1;
   });
 
   pngLoader.load("assets/buttons/LinkedIn.png");
