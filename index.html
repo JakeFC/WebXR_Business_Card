@@ -88,21 +88,21 @@ async function activateXR() {
   const linkedInSprite = new THREE.Sprite(linkedInMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
   linkedInSprite.position.set(-.1414, -.1414, -1);
-  duck.add(linkedInSprite);
+  scene.add(linkedInSprite);
 
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
   const gitHubSprite = new THREE.Sprite(gitHubMaterial);
   gitHubSprite.scale.set(0.25, 0.25, 0.25);
   gitHubSprite.position.set(.1414, -.1414, -1);
-  duck.add(gitHubSprite);
+  scene.add(gitHubSprite);
 
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/Email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
   const emailSprite = new THREE.Sprite(emailMaterial);
   emailSprite.scale.set(0.25, 0.25, 0.25);
   emailSprite.position.set(.0, .2, -1);
-  duck.add(emailSprite);
+  scene.add(emailSprite);
 
 
   session.addEventListener("select", (event) => {
