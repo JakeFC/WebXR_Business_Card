@@ -82,7 +82,7 @@ async function activateXR() {
     scene.add(duck);
   });
 
-  const pngLoader = new THREE.TextureLoader.load("assets/buttons/LinkedIn.png");
+  const pngLoader = new THREE.TextureLoader().load("assets/buttons/LinkedIn.png");
   const spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   //linkedInSprite.scale.set(0.25, 0.25, 0.25);
