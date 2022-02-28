@@ -124,8 +124,8 @@ async function activateXR() {
       //const button = intersections[0].object;
 
       for (var i = 0; i < intersections.length; i++) {
-        if (buttons.includes(intersections[i])) {
-          window.open(intersections[i].userData.link);
+        if (buttons.includes(intersections[i].object)) {
+          window.open(intersections[i].object.userData.link);
         }
       }
     }
