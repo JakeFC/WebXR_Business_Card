@@ -114,7 +114,7 @@ async function activateXR() {
   scene.add(emailBannerSprite);
 
 
-  renderer.domElement.addEventListener("mousemove", onMouseMove, false)
+  session.addEventListener("mousemove", onMouseMove, false)
   
   function onMouseMove(event) {
     window.open("www.google.com");
