@@ -93,7 +93,7 @@ async function activateXR() {
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
   const gitHubSprite = new THREE.Sprite(gitHubMaterial);
-  gitHubSprite.scale.set(2, 2, 2);
+  //gitHubSprite.scale.set(2, 2, 2);
   gitHubSprite.position.set(.1414, -.1414, -1);
   scene.add(gitHubSprite);
 
