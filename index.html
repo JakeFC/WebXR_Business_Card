@@ -127,7 +127,7 @@ async function activateXR() {
   const emailBannerMaterial = new THREE.SpriteMaterial({map: emailBannerLoader});
   const emailBannerSprite = new THREE.Sprite(emailBannerMaterial);
   emailBannerSprite.scale.set(.9, .33, 1);
-  emailBannerSprite.position.set(0, -.97, -1);
+  emailBannerSprite.position.set(0, -.985, -1);
   scene.add(emailBannerSprite);
 
 
@@ -152,13 +152,15 @@ async function activateXR() {
 
     raycaster.setFromCamera(mouse, camera);
 
-    const intersections = raycaster.intersectObjects(buttons, true);
+    //const intersections = raycaster.intersectObjects(buttons, true);
+    const intersections = raycaster.intersectObject(scene.children);
 
     if (intersections.length > 0) {
+      window.open("https://www.linkedin.com/in/jacobfchavera/");
       const button = intersections[0].object;
 
       //if (button.name === "linkedInSprite") {
-        window.open("https://www.linkedin.com/in/jacobfchavera/");
+        //window.open("https://www.linkedin.com/in/jacobfchavera/");
       //}
     }
   });
