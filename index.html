@@ -95,15 +95,15 @@ async function activateXR() {
   const linkedInPageLoader = new THREE.TextureLoader().load("assets/pages/LinkedInPage.PNG");
   const linkedInPageMaterial = new THREE.SpriteMaterial({map: linkedInPageLoader});
   const linkedInPageSprite = new THREE.Sprite(linkedInPageMaterial);
-  linkedInPageSprite.scale.set(.5, 1, 1);
-  linkedInPageSprite.position.set(-.25, 0, -1);
+  linkedInPageSprite.scale.set(.3, .6, .6);
+  linkedInPageSprite.position.set(-.25, 0, -.6);
   scene.add(linkedInPageSprite);
 
   const gitHubPageLoader = new THREE.TextureLoader().load("assets/pages/GitHubPage.PNG");
   const gitHubPageMaterial = new THREE.SpriteMaterial({map: gitHubPageLoader});
   const gitHubPageSprite = new THREE.Sprite(gitHubPageMaterial);
-  gitHubPageSprite.scale.set(.5, 1, 1);
-  gitHubPageSprite.position.set(.25, 0, -1);
+  gitHubPageSprite.scale.set(.3, .6, .6);
+  gitHubPageSprite.position.set(.25, 0, -.6);
   scene.add(gitHubPageSprite);
 
   const emailBannerLoader = new THREE.TextureLoader().load("assets/banners/EmailBanner.PNG");
