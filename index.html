@@ -64,7 +64,7 @@ async function activateXR() {
   const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   const gltfLoader = new THREE.GLTFLoader();
-  const pngLoader = new THREE.TextureLoader();
+  //const pngLoader = new THREE.TextureLoader();
   //let spriteMaterial;
 
   let reticle;
@@ -82,11 +82,11 @@ async function activateXR() {
     //scene.add(duck);
   //});
 
-  pngLoader.load("assets/buttons/LinkedIn.png");
-  const spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
+  const linkedInLoader = new THREE.TextureLoader().load("assets/buttons/LinkedIn.png");
+  const spriteMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
-  //linkedInSprite.scale.set(0.25, 0.25, 0.25);
-  linkedInSprite.position.set(0, -.2, -3);
+  linkedInSprite.scale.set(0.25, 0.25, 0.25);
+  linkedInSprite.matrixWorld.setPosition(0, -.2, -3);
   scene.add(linkedInSprite);
 
 
