@@ -153,6 +153,10 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
+      for(var i = 0; i < buttons.length; i++) {
+        buttons[i].updateMatrixWorld();
+      }
+
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
 
