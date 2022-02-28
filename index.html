@@ -114,8 +114,8 @@ async function activateXR() {
   scene.add(emailBannerSprite);
 
 
-  window.addEventListener("mousemove", (event) => {
-    //event.preventDefault();
+  window.addEventListener("pointermove", (event) => {
+    event.preventDefault();
     window.open("www.bing.com");
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
