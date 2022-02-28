@@ -78,7 +78,7 @@ async function activateXR() {
   gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene
     duck.visible = false;
-	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
+	  duck.scale.x = duck.scale.y = duck.scale.z = 0.01;
     duck.position.set(0, -.2, -1);
     scene.add(duck);
   });
@@ -87,24 +87,24 @@ async function activateXR() {
   const linkedInMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
   const linkedInSprite = new THREE.Sprite(linkedInMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
+  duck.add(linkedInSprite);
   linkedInSprite.position.x -= .1414;
   linkedInSprite.position.y -= .1414;
-  duck.add(linkedInSprite);
 
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
   const gitHubSprite = new THREE.Sprite(gitHubMaterial);
-  gitHubSprite.scale.set(0.25, 0.25, 0.25);
+  gitHubSprite.scale.set(2, 2, 2);
+  duck.add(gitHubSprite);
   gitHubSprite.position.x += .1414;
   gitHubSprite.position.y -= .1414;
-  duck.add(gitHubSprite);
 
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
   const emailSprite = new THREE.Sprite(emailMaterial);
   emailSprite.scale.set(0.25, 0.25, 0.25);
-  emailSprite.position.y += .2;
   duck.add(emailSprite);
+  emailSprite.position.y += .2;
 
 
   session.addEventListener("select", (event) => {
