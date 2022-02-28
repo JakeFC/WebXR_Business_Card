@@ -96,14 +96,14 @@ async function activateXR() {
   const linkedInPageMaterial = new THREE.SpriteMaterial({map: linkedInPageLoader});
   const linkedInPageSprite = new THREE.Sprite(linkedInPageMaterial);
   linkedInPageSprite.scale.set(.3, .6, .6);
-  linkedInPageSprite.position.set(-.15, 0, -.6);
+  linkedInPageSprite.position.set(-.15, 0, -1);
   scene.add(linkedInPageSprite);
 
   const gitHubPageLoader = new THREE.TextureLoader().load("assets/pages/GitHubPage.PNG");
   const gitHubPageMaterial = new THREE.SpriteMaterial({map: gitHubPageLoader});
   const gitHubPageSprite = new THREE.Sprite(gitHubPageMaterial);
   gitHubPageSprite.scale.set(.3, .6, .6);
-  gitHubPageSprite.position.set(.15, 0, -.6);
+  gitHubPageSprite.position.set(.15, 0, -1);
   scene.add(gitHubPageSprite);
 
   const emailBannerLoader = new THREE.TextureLoader().load("assets/banners/EmailBanner.PNG");
@@ -121,13 +121,17 @@ async function activateXR() {
     const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
-      //const button = intersections[0].object;
+      const button = intersections[0].object;
 
-      for (var i = 0; i < intersections.length; i++) {
-        if (buttons.includes(intersections[i].object)) {
-          window.open(intersections[i].object.userData.link);
-        }
+      if (buttons.includes(button)) {
+        window.open(button.userData.link);
       }
+
+      //for (var i = 0; i < intersections.length; i++) {
+        //if (buttons.includes(intersections[i].object)) {
+          //window.open(intersections[i].object.userData.link);
+        //}
+      //}
     }
   });
 
