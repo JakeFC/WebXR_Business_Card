@@ -146,6 +146,23 @@ async function activateXR() {
     //}
   //});
 
+  session.addEventListener("select", (event) => {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersections = raycaster.intersectObjects(buttons, true);
+
+    if (intersections.length > 0) {
+      const button = intersections[0].object;
+
+      //if (button.name === "linkedInSprite") {
+        window.open("https://www.linkedin.com/in/jacobfchavera/");
+      //}
+    }
+  });
+
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
     // Queue up the next draw request.
@@ -170,8 +187,6 @@ async function activateXR() {
       camera.updateMatrixWorld(true);
 
       function onClick(event) {
-        event.preventDefault();
-
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
