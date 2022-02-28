@@ -118,8 +118,8 @@ async function activateXR() {
     event.preventDefault();
     window.open("www.bing.com");
 
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    mouse.x += (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y -= (event.clientY / window.innerHeight) * 2 + 1;
 
     raycaster.setFromCamera(mouse, camera);
 
@@ -158,7 +158,7 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
-      //raycaster.setFromCamera(mouse, camera);
+      raycaster.setFromCamera(mouse, camera);
       scene.add(new THREE.ArrowHelper(raycaster.ray.direction, raycaster.ray.origin, 300, 0xff0000) );
 
       // Render the scene with THREE.WebGLRenderer.
