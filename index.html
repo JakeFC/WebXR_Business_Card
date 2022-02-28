@@ -114,7 +114,7 @@ async function activateXR() {
   scene.add(emailBannerSprite);
 
 
-  session.addEventListener("click", (event) => {
+  session.addEventListener("select", (event) => {
     window.open("www.bing.com");
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
