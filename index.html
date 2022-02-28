@@ -86,8 +86,9 @@ async function activateXR() {
   const spriteMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
-  linkedInSprite.position.set(0, -.2, -3);
+  linkedInSprite.position.set(0, -.2, -1);
   scene.add(linkedInSprite);
+  linkedInSprite.parent = null;
 
 
   session.addEventListener("select", (event) => {
