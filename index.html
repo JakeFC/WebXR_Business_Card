@@ -70,6 +70,7 @@ async function activateXR() {
   const linkedInSprite = new THREE.Sprite(linkedInMaterial);
   linkedInSprite.scale.set(0.12, 0.12, 1);
   linkedInSprite.position.set(-.12, 0, -.5);
+  linkedInSprite.userData.link = "https://www.linkedin.com/in/jacobfchavera/";
   scene.add(linkedInSprite);
   buttons.push(linkedInSprite);
 
@@ -78,6 +79,7 @@ async function activateXR() {
   const gitHubSprite = new THREE.Sprite(gitHubMaterial);
   gitHubSprite.scale.set(0.12, 0.12, 1);
   gitHubSprite.position.set(.12, 0, -.5);
+  gitHubSprite.userData.link = "https://github.com/JakeFC";
   scene.add(gitHubSprite);
   buttons.push(gitHubSprite);
 
@@ -86,6 +88,7 @@ async function activateXR() {
   const emailSprite = new THREE.Sprite(emailMaterial);
   emailSprite.scale.set(0.12, 0.12, 1);
   emailSprite.position.set(0, -.47, -.5);
+  emailSprite.userData.link = "mailto:jacobchavera@yahoo.com";
   scene.add(emailSprite);
   buttons.push(emailSprite);
 
@@ -122,9 +125,7 @@ async function activateXR() {
     if (intersections.length > 0) {
       const button = intersections[0].object;
 
-      if (button.name === "linkedInSprite") {
-        window.open("https://www.linkedin.com/in/jacobfchavera/");
-      }
+      window.open(button.link);
     }
   });
 
