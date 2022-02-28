@@ -157,10 +157,10 @@ async function activateXR() {
         buttons[i].updateMatrixWorld();
       }
 
+      raycaster.setFromCamera(mouse, camera);
+
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
-
-      raycaster.setFromCamera(mouse, camera);
     }
   }
   session.requestAnimationFrame(onXRFrame);
