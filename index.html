@@ -74,19 +74,19 @@ async function activateXR() {
     scene.add(reticle);
   })
   
-  let duck;
-  gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
-	  duck = gltf.scene
+  //let duck;
+  //gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
+	  //duck = gltf.scene
     //duck.visible = false;
-    duck.scale.set(0.25, 0.25, 0.25);
-    duck.position.set(0, -.2, -1);
-    scene.add(duck);
-  });
+    //duck.scale.set(0.25, 0.25, 0.25);
+    //duck.position.set(0, -.2, -1);
+    //scene.add(duck);
+  //});
 
   const linkedInLoader = new THREE.TextureLoader().load("assets/buttons/LinkedIn.png");
   const linkedInMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
   const linkedInSprite = new THREE.Sprite(linkedInMaterial);
-  //linkedInSprite.scale.set(0.25, 0.25, 0.25);
+  linkedInSprite.scale.set(0.25, 0.25, 0.25);
   linkedInSprite.position.set(-.1414, -.1414, -1);
   scene.add(linkedInSprite);
   linkedInSprite.parent = duck;
@@ -94,7 +94,7 @@ async function activateXR() {
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
   const gitHubSprite = new THREE.Sprite(gitHubMaterial);
-  //gitHubSprite.scale.set(0.25, 0.25, 0.25);
+  gitHubSprite.scale.set(0.25, 0.25, 0.25);
   gitHubSprite.position.set(.1414, -.1414, -1);
   scene.add(gitHubSprite);
   gitHubSprite.parent = duck;
@@ -102,14 +102,14 @@ async function activateXR() {
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/Email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
   const emailSprite = new THREE.Sprite(emailMaterial);
-  //emailSprite.scale.set(0.25, 0.25, 0.25);
+  emailSprite.scale.set(0.25, 0.25, 0.25);
   emailSprite.position.set(.0, .2, -1);
   scene.add(emailSprite);
   emailSprite.parent = duck;
 
 
-  session.addEventListener("select", (event) => {
-    if (duck && reticle && reticle.visible) {
+  //session.addEventListener("select", (event) => {
+    //if (duck && reticle && reticle.visible) {
       //const clone = duck.clone();
 
       //linkedInSprite.position.copy(reticle.position);
@@ -120,8 +120,8 @@ async function activateXR() {
 
       //scene.remove(reticle);
       //reticle.visible = false;
-    }
-  });
+    //}
+  //});
 
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
