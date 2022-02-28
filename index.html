@@ -125,9 +125,9 @@ async function activateXR() {
     if (intersections.length > 0) {
       const button = intersections[0].object;
 
-      if (buttons.indexOf(button) != -1) {
+      //if (buttons.indexOf(button) != -1) {
       window.open(button.userData.link);
-      }
+      //}
     }
   });
 
