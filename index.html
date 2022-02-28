@@ -76,18 +76,18 @@ async function activateXR() {
   
   let duck;
   gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
-	  duck = gltf.scene;
+	  duck = gltf.scene
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
-    duck.position.set(0, -.2, -5)
+    duck.position.set(0, -.2, -5);
     scene.add(duck);
   });
 
   pngLoader.load("assets/buttons/LinkedIn.png");
   spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
-  linkedInSprite.scale.set(0.25, 0.25, 0.25);
-  //scene.add(linkedInSprite);
-  //linkedInSprite.position.z += 1;
+  //linkedInSprite.scale.set(0.25, 0.25, 0.25);
+  linkedInSprite.position.set(0, -.2, -3);
+  scene.add(linkedInSprite);
 
 
   session.addEventListener("select", (event) => {
