@@ -34,12 +34,7 @@ async function activateXR() {
   scene.add(ambientLight);
 
   // Set up the WebGLRenderer, which handles rendering to the session's base layer.
-  const renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    preserveDrawingBuffer: true,
-    canvas: canvas,
-    context: gl
-  });
+  const renderer = new THREE.WebGLRenderer();
   //renderer.autoClear = false;
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.body.appendChild(renderer.domElement)
@@ -58,10 +53,10 @@ async function activateXR() {
   
   // A 'local' reference space has a native origin that is located
   // near the viewer's position at the time the session was created.
-  const referenceSpace = await session.requestReferenceSpace('local');
+  //const referenceSpace = await session.requestReferenceSpace('local');
 
   // Create another XRReferenceSpace that has the viewer as the origin.
-  const viewerSpace = await session.requestReferenceSpace('viewer');
+  //const viewerSpace = await session.requestReferenceSpace('viewer');
 
   const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
 
