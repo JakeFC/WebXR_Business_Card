@@ -118,6 +118,7 @@ async function activateXR() {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
+    raycaster.setFromCamera(mouse, camera);
     const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
@@ -151,10 +152,6 @@ async function activateXR() {
       camera.matrix.fromArray(view.transform.matrix)
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
-
-      //for(var i = 0; i < buttons.length; i++) {
-        //buttons[i].updateMatrixWorld();
-      //}
 
       raycaster.setFromCamera(mouse, camera);
 
