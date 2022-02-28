@@ -37,7 +37,7 @@ async function activateXR() {
   const renderer = new THREE.WebGLRenderer();
   //renderer.autoClear = false;
   renderer.setSize(window.innerWidth, window.innerHeight)
-  document.body.appendChild(renderer.domElement)
+  canvas.appendChild(renderer.domElement)
   renderer.xr.enabled = true;
   
   // The API directly updates the camera matrices.
