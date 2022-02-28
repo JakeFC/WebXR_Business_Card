@@ -83,7 +83,7 @@ async function activateXR() {
     //scene.add(duck);
   //});
 
-  const buttons = [];
+  //const buttons = [];
 
   const linkedInLoader = new THREE.TextureLoader().load("assets/buttons/LinkedIn.png");
   const linkedInMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
@@ -91,7 +91,7 @@ async function activateXR() {
   linkedInSprite.scale.set(0.12, 0.12, 1);
   linkedInSprite.position.set(-.12, 0, -.5);
   scene.add(linkedInSprite);
-  buttons.push(linkedInSprite);
+  //buttons.push(linkedInSprite);
 
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
@@ -99,7 +99,7 @@ async function activateXR() {
   gitHubSprite.scale.set(0.12, 0.12, 1);
   gitHubSprite.position.set(.12, 0, -.5);
   scene.add(gitHubSprite);
-  buttons.push(gitHubSprite);
+  //buttons.push(gitHubSprite);
 
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/Email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
@@ -107,7 +107,7 @@ async function activateXR() {
   emailSprite.scale.set(0.12, 0.12, 1);
   emailSprite.position.set(0, -.42, -.5);
   scene.add(emailSprite);
-  buttons.push(emailSprite);
+  //buttons.push(emailSprite);
 
   const linkedInPageLoader = new THREE.TextureLoader().load("assets/pages/LinkedInPage.PNG");
   const linkedInPageMaterial = new THREE.SpriteMaterial({map: linkedInPageLoader});
