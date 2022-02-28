@@ -120,12 +120,11 @@ async function activateXR() {
     const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
-      window.open("https://www.linkedin.com/in/jacobfchavera/");
       const button = intersections[0].object;
 
-      //if (button.name === "linkedInSprite") {
-        //window.open("https://www.linkedin.com/in/jacobfchavera/");
-      //}
+      if (button.name === "linkedInSprite") {
+        window.open("https://www.linkedin.com/in/jacobfchavera/");
+      }
     }
   });
 
