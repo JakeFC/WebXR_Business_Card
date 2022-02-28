@@ -186,23 +186,6 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
-      function onClick(event) {
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-
-        const intersections = raycaster.intersectObjects(buttons, true);
-
-        if (intersections.length > 0) {
-          const button = intersections[0].object;
-
-          //if (button.name === "linkedInSprite") {
-            window.open("https://www.linkedin.com/in/jacobfchavera/");
-          //}
-        }
-      }
-  
       //const hitTestResults = frame.getHitTestResults(hitTestSource);
       //if (hitTestResults.length > 0 && reticle) {
       //  const hitPose = hitTestResults[0].getPose(referenceSpace);
