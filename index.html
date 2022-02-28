@@ -104,6 +104,20 @@ async function activateXR() {
   emailSprite.position.set(.0, .2, -1);
   scene.add(emailSprite);
 
+  const linkedInPageLoader = new THREE.TextureLoader().load("assets/pages/LinkedInPage.png");
+  const linkedInPageMaterial = new THREE.SpriteMaterial({map: linkedInPageLoader});
+  const linkedInPageSprite = new THREE.Sprite(linkedInPageMaterial);
+  linkedInPageSprite.scale.set(1, 2, 1);
+  linkedInPageSprite.position.set(.5, 0, -1);
+  scene.add(linkedInPageSprite);
+
+  const gitHubPageLoader = new THREE.TextureLoader().load("assets/pages/GitHubPage.png");
+  const gitHubPageMaterial = new THREE.SpriteMaterial({map: gitHubPageLoader});
+  const gitHubPageSprite = new THREE.Sprite(gitHubPageMaterial);
+  gitHubPageSprite.scale.set(1, 2, 1);
+  gitHubPageSprite.position.set(1, 0, -1);
+  scene.add(gitHubPageSprite);
+
 
   //session.addEventListener("select", (event) => {
     //if (duck && reticle && reticle.visible) {
