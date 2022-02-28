@@ -125,7 +125,7 @@ async function activateXR() {
     if (intersections.length > 0) {
       const button = intersections[0].object;
 
-      if (button.hasAttribute(userData.link)) {
+      if (button.hasAttribute(link)) {
         window.open(button.userData.link);
       }
     }
