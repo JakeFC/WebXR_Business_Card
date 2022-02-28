@@ -123,7 +123,6 @@ async function activateXR() {
     const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
-      window.open("www.google.com");
       const button = intersections[0].object;
 
       if (buttons.includes(button)) {
