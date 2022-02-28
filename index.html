@@ -115,13 +115,14 @@ async function activateXR() {
 
 
   session.addEventListener("select", (event) => {
-    window.open("www.bing.com");
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-    const intersections = raycaster.intersectObjects(scene.children);
+    //const intersections = raycaster.intersectObjects(scene.children);
+    const intersections = raycaster.intersectObjects(buttons);
 
     if (intersections.length > 0) {
+      window.open("https://www.google.com");
       const button = intersections[0].object;
 
       if (buttons.includes(button)) {
