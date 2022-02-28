@@ -99,7 +99,7 @@ async function activateXR() {
   gitHubSprite.scale.set(0.12, 0.12, 1);
   gitHubSprite.position.set(.12, 0, -.5);
   scene.add(gitHubSprite);
-  buttons.push(gitHubPageSprite);
+  buttons.push(gitHubSprite);
 
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/Email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
