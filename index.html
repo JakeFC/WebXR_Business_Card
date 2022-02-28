@@ -114,11 +114,11 @@ async function activateXR() {
   scene.add(emailBannerSprite);
 
 
-  session.addEventListener("touchstart", (event) => {
+  session.addEventListener("onclick", (event) => {
     event.preventDefault();
 
-    mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.touches[0].clientY / window.innerHeight) * 2 + 1;
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
     const intersections = raycaster.intersectObjects(scene.children);
 
