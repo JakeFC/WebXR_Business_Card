@@ -147,10 +147,10 @@ async function activateXR() {
   //});
 
   session.addEventListener("select", (event) => {
-    mouse.x = (event.clientX / viewport.Width) * 2 - 1;
-    mouse.y = - (event.clientY / viewport.Height) * 2 + 1;
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-    raycaster.setFromCamera(mouse, camera);
+    //raycaster.setFromCamera(mouse, camera);
 
     //const intersections = raycaster.intersectObjects(buttons, true);
     const intersections = raycaster.intersectObjects(scene.children);
@@ -197,6 +197,7 @@ async function activateXR() {
       //}
 
       // Render the scene with THREE.WebGLRenderer.
+      raycaster.setFromCamera(mouse, camera);
       renderer.render(scene, camera)
     }
   }
