@@ -38,6 +38,7 @@ async function activateXR() {
   //renderer.autoClear = false;
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.body.appendChild(renderer.domElement)
+  renderer.xr.enabled = true;
   
   // The API directly updates the camera matrices.
   // Disable matrix auto updates so three.js doesn't attempt
