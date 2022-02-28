@@ -101,7 +101,7 @@ async function activateXR() {
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
   const emailSprite = new THREE.Sprite(emailMaterial);
   emailSprite.scale.set(0.12, 0.12, 1);
-  emailSprite.position.set(0, -.3, -.5);
+  emailSprite.position.set(0, -.4, -.5);
   scene.add(emailSprite);
 
   const linkedInPageLoader = new THREE.TextureLoader().load("assets/pages/LinkedInPage.PNG");
@@ -121,8 +121,8 @@ async function activateXR() {
   const emailBannerLoader = new THREE.TextureLoader().load("assets/banners/EmailBanner.PNG");
   const emailBannerMaterial = new THREE.SpriteMaterial({map: emailBannerLoader});
   const emailBannerSprite = new THREE.Sprite(emailBannerMaterial);
-  emailBannerSprite.scale.set(1, .33, 1);
-  emailBannerSprite.position.set(0, -.4, -1);
+  emailBannerSprite.scale.set(.9, .33, 1);
+  emailBannerSprite.position.set(0, -.6, -1);
   scene.add(emailBannerSprite);
 
 
