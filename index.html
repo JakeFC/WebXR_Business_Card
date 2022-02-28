@@ -153,10 +153,10 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
-      raycaster.setFromCamera(mouse, camera);
-
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
+
+      raycaster.setFromCamera(mouse, camera);
     }
   }
   session.requestAnimationFrame(onXRFrame);
