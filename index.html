@@ -60,28 +60,8 @@ async function activateXR() {
 
   // Create another XRReferenceSpace that has the viewer as the origin.
   const viewerSpace = await session.requestReferenceSpace('viewer');
-  // Perform hit testing using the viewer as origin.
-  //const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
   const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
-
-  //const gltfLoader = new THREE.GLTFLoader();
-
-  //let reticle;
-  //gltfLoader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
-    //reticle = gltf.scene;
-    //reticle.visible = false;
-    //scene.add(reticle);
-  //})
-  
-  //let duck;
-  //gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
-	  //duck = gltf.scene
-    //duck.visible = false;
-    //duck.scale.set(0.25, 0.25, 0.25);
-    //duck.position.set(0, -.2, -1);
-    //scene.add(duck);
-  //});
 
   const buttons = [];
 
@@ -131,26 +111,10 @@ async function activateXR() {
   scene.add(emailBannerSprite);
 
 
-  //session.addEventListener("select", (event) => {
-    //if (duck && reticle && reticle.visible) {
-      //const clone = duck.clone();
-
-      //linkedInSprite.position.copy(reticle.position);
-      //scene.add(linkedInSprite);
-
-      //duck.add(linkedInSprite);
-      //linkedInSprite.position.y += 2;
-
-      //scene.remove(reticle);
-      //reticle.visible = false;
-    //}
-  //});
-
   session.addEventListener("select", (event) => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-    //raycaster.setFromCamera(mouse, camera);
 
     //const intersections = raycaster.intersectObjects(buttons, true);
     const intersections = raycaster.intersectObjects(scene.children);
@@ -188,16 +152,9 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
-      //const hitTestResults = frame.getHitTestResults(hitTestSource);
-      //if (hitTestResults.length > 0 && reticle) {
-      //  const hitPose = hitTestResults[0].getPose(referenceSpace);
-      //  reticle.visible = true;
-      //  reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
-      //  reticle.updateMatrixWorld(true);
-      //}
+      raycaster.setFromCamera(mouse, camera);
 
       // Render the scene with THREE.WebGLRenderer.
-      raycaster.setFromCamera(mouse, camera);
       renderer.render(scene, camera)
     }
   }
