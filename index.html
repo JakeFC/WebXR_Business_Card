@@ -119,10 +119,10 @@ async function activateXR() {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-    raycaster.setFromCamera(mouse, camera);
     const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
+      window.open("www.google.com");
       const button = intersections[0].object;
 
       if (buttons.includes(button)) {
