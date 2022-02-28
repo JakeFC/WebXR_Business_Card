@@ -78,20 +78,24 @@ async function activateXR() {
   gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene;
 	  duck.scale.x = duck.scale.y = duck.scale.z = 0.25;
+    duck.psition.set(0, 0, 3);
+    scene.add(duck);
   });
 
   pngLoader.load("assets/buttons/LinkedIn.png");
   spriteMaterial = new THREE.SpriteMaterial({map: pngLoader});
   const linkedInSprite = new THREE.Sprite(spriteMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
+  linkedInSprite.position.set(0, 0, 1);
+  scene.add(linkedInSprite);
 
 
   session.addEventListener("select", (event) => {
     if (duck && reticle && reticle.visible) {
       //const clone = duck.clone();
 
-      linkedInSprite.position.copy(reticle.position);
-      scene.add(linkedInSprite);
+      //linkedInSprite.position.copy(reticle.position);
+      //scene.add(linkedInSprite);
 
       //duck.add(linkedInSprite);
       //linkedInSprite.position.y += 2;
