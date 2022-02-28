@@ -118,11 +118,11 @@ async function activateXR() {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-    //const intersections = raycaster.intersectObjects(scene.children);
-    const intersections = raycaster.intersectObjects(buttons);
+    const intersections = raycaster.intersectObjects(scene.children);
+    //const intersections = raycaster.intersectObjects(buttons);
 
     if (intersections.length > 0) {
-      window.open("https://www.google.com");
+      //window.open("https://www.google.com");
       const button = intersections[0].object;
 
       if (buttons.includes(button)) {
@@ -154,12 +154,14 @@ async function activateXR() {
       camera.projectionMatrix.fromArray(view.projectionMatrix);
       camera.updateMatrixWorld(true);
 
-      raycaster.setFromCamera(mouse, camera);
+      //raycaster.setFromCamera(mouse, camera);
 
       // Render the scene with THREE.WebGLRenderer.
       renderer.render(scene, camera)
     }
   }
+  raycaster.setFromCamera(mouse, camera);
+
   session.requestAnimationFrame(onXRFrame);
 }
 </script>
