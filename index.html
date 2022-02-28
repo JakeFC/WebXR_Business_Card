@@ -63,7 +63,7 @@ async function activateXR() {
   // Perform hit testing using the viewer as origin.
   //const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
 
-  //const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2(), raycaster = new THREE.Raycaster();
 
   //const gltfLoader = new THREE.GLTFLoader();
 
@@ -83,7 +83,7 @@ async function activateXR() {
     //scene.add(duck);
   //});
 
-  //const buttons = [];
+  const buttons = [];
 
   const linkedInLoader = new THREE.TextureLoader().load("assets/buttons/LinkedIn.png");
   const linkedInMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
@@ -91,7 +91,7 @@ async function activateXR() {
   linkedInSprite.scale.set(0.12, 0.12, 1);
   linkedInSprite.position.set(-.12, 0, -.5);
   scene.add(linkedInSprite);
-  //buttons.push(linkedInSprite);
+  buttons.push(linkedInSprite);
 
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
@@ -99,7 +99,7 @@ async function activateXR() {
   gitHubSprite.scale.set(0.12, 0.12, 1);
   gitHubSprite.position.set(.12, 0, -.5);
   scene.add(gitHubSprite);
-  //buttons.push(gitHubSprite);
+  buttons.push(gitHubSprite);
 
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/Email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
@@ -107,7 +107,7 @@ async function activateXR() {
   emailSprite.scale.set(0.12, 0.12, 1);
   emailSprite.position.set(0, -.42, -.5);
   scene.add(emailSprite);
-  //buttons.push(emailSprite);
+  buttons.push(emailSprite);
 
   const linkedInPageLoader = new THREE.TextureLoader().load("assets/pages/LinkedInPage.PNG");
   const linkedInPageMaterial = new THREE.SpriteMaterial({map: linkedInPageLoader});
@@ -127,7 +127,7 @@ async function activateXR() {
   const emailBannerMaterial = new THREE.SpriteMaterial({map: emailBannerLoader});
   const emailBannerSprite = new THREE.Sprite(emailBannerMaterial);
   emailBannerSprite.scale.set(.9, .33, 1);
-  emailBannerSprite.position.set(0, -.8, -1);
+  emailBannerSprite.position.set(0, -1, -1);
   scene.add(emailBannerSprite);
 
 
@@ -146,22 +146,22 @@ async function activateXR() {
     //}
   //});
 
-  //session.addEventListener("select", (event) => {
-    //mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    //mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+  session.addEventListener("select", (event) => {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-    //raycaster.setFromCamera(mouse, camera);
+    raycaster.setFromCamera(mouse, camera);
 
-    //const intersections = raycaster.intersectObjects(buttons, true);
+    const intersections = raycaster.intersectObjects(buttons, true);
 
-    //if (intersections.length > 0) {
-      //const button = intersections[0].object;
+    if (intersections.length > 0) {
+      const button = intersections[0].object;
 
-      //if (button.name === "linkedInSprite") {
-        //window.open("https://www.linkedin.com/in/jacobfchavera/");
-      //}
-    //}
-  //});
+      if (button.name === "linkedInSprite") {
+        window.open("https://www.linkedin.com/in/jacobfchavera/");
+      }
+    }
+  });
 
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
