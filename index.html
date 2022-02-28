@@ -115,6 +115,7 @@ async function activateXR() {
 
 
   session.addEventListener("touchstart", (event) => {
+    event.preventDefault();
 
     mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.touches[0].clientY / window.innerHeight) * 2 + 1;
