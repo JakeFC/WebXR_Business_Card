@@ -121,15 +121,12 @@ async function activateXR() {
     const intersections = raycaster.intersectObjects(scene.children);
 
     if (intersections.length > 0) {
-      const button = intersections[0].object;
-      const button2 = intersections[1].object;
+      //const button = intersections[0].object;
 
-      if (buttons.includes(button)) {
-        window.open(button.userData.link);
-      }
-
-      if (buttons.includes(button2)) {
-        window.open("www.bing.com");
+      for (var i = 0; i < intersections.length; i++) {
+        if (buttons.includes(intersections[i])) {
+          window.open(intersections[i].userData.link);
+        }
       }
     }
   });
