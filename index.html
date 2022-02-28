@@ -77,7 +77,7 @@ async function activateXR() {
   let duck;
   gltfLoader.load("assets/buttons/Duck/scene.gltf", function(gltf) {
 	  duck = gltf.scene
-    duck.visible = false;
+    //duck.visible = false;
     duck.scale.set(0.25, 0.25, 0.25);
     duck.position.set(0, -.2, -1);
     scene.add(duck);
