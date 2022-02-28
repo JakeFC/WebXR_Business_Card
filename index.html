@@ -147,8 +147,8 @@ async function activateXR() {
   //});
 
   session.addEventListener("select", (event) => {
-    mouse.x = (event.clientX / viewport.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / viewport.innerHeight) * 2 + 1;
+    mouse.x = (event.clientX / viewport.Width) * 2 - 1;
+    mouse.y = - (event.clientY / viewport.Height) * 2 + 1;
 
     raycaster.setFromCamera(mouse, camera);
 
