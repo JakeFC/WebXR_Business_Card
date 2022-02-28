@@ -87,34 +87,34 @@ async function activateXR() {
   const linkedInMaterial = new THREE.SpriteMaterial({map: linkedInLoader});
   const linkedInSprite = new THREE.Sprite(linkedInMaterial);
   linkedInSprite.scale.set(0.25, 0.25, 0.25);
-  linkedInSprite.position.set(-.1414, -.1414, -1);
+  linkedInSprite.position.set(-1, .5, -1);
   scene.add(linkedInSprite);
 
   const gitHubLoader = new THREE.TextureLoader().load("assets/buttons/GitHub.png");
   const gitHubMaterial = new THREE.SpriteMaterial({map: gitHubLoader});
   const gitHubSprite = new THREE.Sprite(gitHubMaterial);
   gitHubSprite.scale.set(0.25, 0.25, 0.25);
-  gitHubSprite.position.set(.1414, -.1414, -1);
+  gitHubSprite.position.set(1, .5, -1);
   scene.add(gitHubSprite);
 
   const emailLoader = new THREE.TextureLoader().load("assets/buttons/Email.png");
   const emailMaterial = new THREE.SpriteMaterial({map: emailLoader});
   const emailSprite = new THREE.Sprite(emailMaterial);
   emailSprite.scale.set(0.25, 0.25, 0.25);
-  emailSprite.position.set(.0, .2, -1);
+  emailSprite.position.set(0, -.2, -1);
   scene.add(emailSprite);
 
   const linkedInPageLoader = new THREE.TextureLoader().load("assets/pages/LinkedInPage.PNG");
   const linkedInPageMaterial = new THREE.SpriteMaterial({map: linkedInPageLoader});
   const linkedInPageSprite = new THREE.Sprite(linkedInPageMaterial);
-  linkedInPageSprite.scale.set(1, 2, 1);
-  linkedInPageSprite.position.set(.5, 0, -1);
+  linkedInPageSprite.scale.set(.5, 1, .5);
+  linkedInPageSprite.position.set(-1, 0, -1);
   scene.add(linkedInPageSprite);
 
   const gitHubPageLoader = new THREE.TextureLoader().load("assets/pages/GitHubPage.PNG");
   const gitHubPageMaterial = new THREE.SpriteMaterial({map: gitHubPageLoader});
   const gitHubPageSprite = new THREE.Sprite(gitHubPageMaterial);
-  gitHubPageSprite.scale.set(1, 2, 1);
+  gitHubPageSprite.scale.set(.5, 1, .5);
   gitHubPageSprite.position.set(1, 0, -1);
   scene.add(gitHubPageSprite);
 
