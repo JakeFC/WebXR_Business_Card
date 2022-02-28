@@ -165,6 +165,10 @@ async function activateXR() {
     }
   });
 
+  linkedInSprite.addEventListener("click", (event) => {
+    window.open("https://www.linkedin.com/in/jacobfchavera/");
+  });
+
   // Create a render loop that allows us to draw on the AR view.
   const onXRFrame = (time, frame) => {
     // Queue up the next draw request.
