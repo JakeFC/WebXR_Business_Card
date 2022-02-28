@@ -110,7 +110,7 @@ async function activateXR() {
   const emailBannerMaterial = new THREE.SpriteMaterial({map: emailBannerLoader});
   const emailBannerSprite = new THREE.Sprite(emailBannerMaterial);
   emailBannerSprite.scale.set(.495, .1815, .55);
-  emailBannerSprite.position.set(0, -.48, -.6);
+  emailBannerSprite.position.set(0, -.51, -.6);
   scene.add(emailBannerSprite);
 
 
@@ -125,7 +125,7 @@ async function activateXR() {
     if (intersections.length > 0) {
       const button = intersections[0].object;
 
-      window.open(button.link);
+      window.open(button.userData.link);
     }
   });
 
