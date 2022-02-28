@@ -127,7 +127,7 @@ async function activateXR() {
   const emailBannerMaterial = new THREE.SpriteMaterial({map: emailBannerLoader});
   const emailBannerSprite = new THREE.Sprite(emailBannerMaterial);
   emailBannerSprite.scale.set(.9, .33, 1);
-  emailBannerSprite.position.set(0, -1, -1);
+  emailBannerSprite.position.set(0, -.97, -1);
   scene.add(emailBannerSprite);
 
 
@@ -198,6 +198,7 @@ async function activateXR() {
       renderer.render(scene, camera)
     }
   }
+  window.open("https://www.linkedin.com/in/jacobfchavera/");
   session.requestAnimationFrame(onXRFrame);
 }
 </script>
